@@ -1,8 +1,37 @@
 import Button from "../components/Button";
-import arrowRight from "../assets/icons/arrow-right.svg";
-import { statistics } from "../constants";
+import { shoes, statistics } from "../constants";
+import { arrowRight } from "../assets/icons";
+import { bigShoe1, bigShoe2, bigShoe3 } from "../assets/images";
+import { useEffect, useState } from "react";
+import ShoeCard from "../components/ShoeCard";
 
 const Hero = () => {
+  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
+  const [timer, setTimer] = useState(5);
+
+  useEffect(() => {
+    const switchShoeDelay = 6000;
+    const timerInterval = 1000;
+
+    let timeLeft = 6;
+
+    const interval = setInterval(() => {
+      timeLeft -= 1;
+      setTimer(timeLeft);
+
+      if (timeLeft === 1) {
+        setBigShoeImg((prev) => {
+          if (prev === bigShoe1) return bigShoe2;
+          if (prev === bigShoe2) return bigShoe3;
+          return bigShoe1;
+        });
+        timeLeft = switchShoeDelay / timerInterval;
+      }
+    }, timerInterval);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="home"
@@ -31,6 +60,31 @@ const Hero = () => {
               <p className="leading-7 font-montserrat text-slate-gray">
                 {stat.label}
               </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
+        <img
+          src={bigShoeImg}
+          alt="shoe collection"
+          width={610}
+          height={502}
+          className="object-contain relative z-10"
+        />
+        <span className="w-[20px] h-[20px] bg-coral-red flex items-center justify-center text-neutral-50 rounded-full p-4 ">
+          {" "}
+          {timer}
+        </span>
+
+        <div className="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
+          {shoes.map((shoe) => (
+            <div key={shoe.bigShoe}>
+              <ShoeCard
+                shoe={shoe}
+                changeBigShoeImage={(shoe) => setBigShoeImg(shoe)}
+                bigShoeImg={bigShoeImg}
+              />
             </div>
           ))}
         </div>

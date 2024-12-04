@@ -57,3 +57,7 @@ export default tseslint.config({
   },
 });
 ```
+
+# Tutorial link
+
+- https://www.youtube.com/watch?v=tS7upsfuxmo
