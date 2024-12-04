@@ -65,17 +65,19 @@ const Hero = () => {
         </div>
       </div>
       <div className="relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
-        <img
-          src={bigShoeImg}
-          alt="shoe collection"
-          width={610}
-          height={502}
-          className="object-contain relative z-10"
-        />
-        <span className="w-[20px] h-[20px] bg-coral-red flex items-center justify-center text-neutral-50 rounded-full p-4 ">
-          {" "}
-          {timer}
-        </span>
+        <div className="flex flex-col sm:flex-row items-center justify-center">
+          <img
+            src={bigShoeImg}
+            alt="shoe collection"
+            width={610}
+            height={502}
+            className="object-contain relative z-10"
+          />
+          <span className="w-[20px] h-[20px] bg-coral-red flex items-center justify-center text-neutral-50 rounded-full p-4 animate-pulse delay-1000">
+            {" "}
+            {timer}
+          </span>
+        </div>
 
         <div className="flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6">
           {shoes.map((shoe) => (
