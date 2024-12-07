@@ -3,7 +3,7 @@ import { IProduct } from "../constants";
 
 const PopularProductCard = ({ imgURL, name, price }: IProduct) => {
   return (
-    <div className="flex flex-1 flex-col w-full max-sm:w-full">
+    <div className="flex flex-1 flex-col justify-center items-center md:items-start w-full max-sm:w-full ">
       <img src={imgURL} alt={name} className="w-[282px] h-[282px]" />
       <div className="mt-8 flex justify-start gap-2.5">
         <img src={star} alt="rating icon" width={24} height={24} />
