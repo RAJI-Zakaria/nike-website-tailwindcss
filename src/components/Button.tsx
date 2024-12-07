@@ -49,15 +49,12 @@ const Button = ({
 
       {/* MODAL */}
       <div
-        id="default-modal"
-        tabIndex={-1}
-        aria-hidden="true"
         className={`${
           !showDialog && "hidden"
-        }  fixed flex border border-neutral-900 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+        }  fixed flex  z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
       >
         <div className="relative p-4 w-full max-w-2xl max-h-full">
-          <div className="relative bg-white rounded-lg shadow  ">
+          <div className="relative bg-white rounded-lg shadow   border border-neutral-200">
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t  ">
               <h3 className="text-xl font-semibold text-gray-900 ">
                 Terms of Service
