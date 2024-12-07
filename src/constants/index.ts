@@ -13,7 +13,14 @@ import {
   customer2,
 } from "../assets/images";
 
-import { shieldTick, support, truckFast } from "../assets/icons";
+import {
+  shieldTick,
+  support,
+  truckFast,
+  facebook,
+  twitter,
+  instagram,
+} from "../assets/icons";
 
 //================================================
 
@@ -144,4 +151,53 @@ export const reviews: IReview[] = [
     feedback:
       "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
   },
+];
+
+//================================================
+
+export interface IFooterLink {
+  title: string;
+  links: { name: string; link: string }[];
+}
+
+export const footerLinks: IFooterLink[] = [
+  {
+    title: "Products",
+    links: [
+      { name: "Air Force 1", link: "/" },
+      { name: "Air Max 1", link: "/" },
+      { name: "Air Jordan 1", link: "/" },
+      { name: "Air Force 2", link: "/" },
+      { name: "Nike Waffle Racer", link: "/" },
+      { name: "Nike Cortez", link: "/" },
+    ],
+  },
+  {
+    title: "Help",
+    links: [
+      { name: "About us", link: "/" },
+      { name: "FAQs", link: "/" },
+      { name: "How it works", link: "/" },
+      { name: "Privacy policy", link: "/" },
+      { name: "Payment policy", link: "/" },
+    ],
+  },
+  {
+    title: "Get in touch",
+    links: [
+      { name: "airakaz.fr", link: "https://www.airakaz.fr" },
+      { name: "+xxxxxxx", link: "tel:+105" },
+    ],
+  },
+];
+
+export interface ISocialMedia {
+  src: string;
+  alt: string;
+}
+
+export const socialMedia: ISocialMedia[] = [
+  { src: facebook, alt: "facebook logo" },
+  { src: twitter, alt: "twitter logo" },
+  { src: instagram, alt: "instagram logo" },
 ];
