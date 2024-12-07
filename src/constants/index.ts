@@ -9,6 +9,8 @@ import {
   thumbnailShoe1,
   thumbnailShoe2,
   thumbnailShoe3,
+  customer1,
+  customer2,
 } from "../assets/images";
 
 import { shieldTick, support, truckFast } from "../assets/icons";
@@ -116,5 +118,30 @@ export const services: IService[] = [
     imgURL: support,
     label: "Love to help you",
     subtext: "Our dedicated team is here to assist you every step of the way.",
+  },
+];
+
+//================================================
+
+export interface IReview {
+  imgURL: string;
+  customerName: string;
+  rating: number;
+  feedback: string;
+}
+export const reviews: IReview[] = [
+  {
+    imgURL: customer1,
+    customerName: "Morich Brown",
+    rating: 4.5,
+    feedback:
+      "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
+  },
+  {
+    imgURL: customer2,
+    customerName: "Lota Mongeskar",
+    rating: 4.5,
+    feedback:
+      "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
   },
 ];
